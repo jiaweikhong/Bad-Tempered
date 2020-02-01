@@ -6,8 +6,6 @@ TagManager:
   tags:
   - CrackedScreen
   - Screen
-  - CrackedPointer
-  - NewScreen
   layers:
   - Default
   - TransparentFX

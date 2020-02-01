@@ -31,7 +31,6 @@ public class CrackedScreenAnimate : MonoBehaviour
     }
     public void GoToCleanStage()
     {
-        PointsScript.points += 20;
         SceneManager.LoadScene("CleanStage");
     }
 }

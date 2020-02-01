@@ -6,25 +6,36 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public static int timeLeft;
+    public float myTimer = 120;
+    public Text timerText;
+    private bool timerIsActive = true;
 
     void Start()
     {
-        DontDestroyOnLoad(transform.gameObject);
-        timeLeft = 20;
-        InvokeRepeating("ReduceTime", 1, 1);
+        timerText = GetComponent<Text>();
     }
-    void ReduceTime()
+
+    void Awake()
     {
-        if (timeLeft <= 1)
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
+    void Update()
+    {
+        if (timerIsActive)
         {
-            Debug.Log("game over");
-            SceneManager.LoadScene("GameOver");
-            Destroy(this.gameObject);
+            myTimer -= Time.deltaTime;
+            timerText.text = myTimer.ToString("f0");
+            print(myTimer);
+
+            if (myTimer <= 0)
+            {
+                myTimer = 0;
+                timerIsActive = false;
+                SceneManager.LoadScene("lose");
+
+            }
         }
-        else
-        {
-            timeLeft -= 1;
-        }
+
     }
 }
