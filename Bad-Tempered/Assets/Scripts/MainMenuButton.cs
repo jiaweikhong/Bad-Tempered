@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenuButton : MonoBehaviour
 {
     public Animator animator;
+    public AudioSource buttonPressSound;
+    public AudioClip buttonPressSoundClip;
 
     // Start is called before the first frame update
     void Start()
     {
+        buttonPressSound = GetComponent<AudioSource>();
 
     }
 
@@ -22,11 +25,13 @@ public class MainMenuButton : MonoBehaviour
     private void OnMouseDown()
     {
         animator.SetBool("ButtonPress", true);
+        buttonPressSound.PlayOneShot(buttonPressSoundClip, 1.0f);
     }
 
     private void OnMouseUp()
     {
         animator.SetBool("ButtonPress", false);
+        buttonPressSound.PlayOneShot(buttonPressSoundClip, 1.0f);
         GoToPrepareGame();
     }
 

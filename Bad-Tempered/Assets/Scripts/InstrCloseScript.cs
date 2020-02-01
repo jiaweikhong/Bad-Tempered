@@ -6,11 +6,12 @@ public class InstrCloseScript : MonoBehaviour
 {
     public GameObject startButton;
     public GameObject instructionsButton;
-
+    public AudioSource closeInstrSource;
+    public AudioClip closeInstrClip;
     // Start is called before the first frame update
     void Start()
     {
-        
+        closeInstrSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,4 +26,5 @@ public class InstrCloseScript : MonoBehaviour
         startButton.SetActive(true);
         instructionsButton.SetActive(true);
     }
+
 }
