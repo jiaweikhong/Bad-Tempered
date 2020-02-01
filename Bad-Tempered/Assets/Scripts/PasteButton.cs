@@ -13,6 +13,7 @@ public class PasteButton : MonoBehaviour
     public Sprite PressedButtonImg;
     public Sprite NormalButtonImg;
     SpriteRenderer spriteRenderer;
+    public AudioSource pasteSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,7 @@ public class PasteButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        pasteSound.Play();
         mouseIsDown = true;
     }
 

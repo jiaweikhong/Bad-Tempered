@@ -7,10 +7,12 @@ public class PeelScript : MonoBehaviour
     GameObject pointer;
     public int peelType;
     public Animator animator;
+    public AudioSource peelAttemptSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        peelAttemptSound = GetComponent<AudioSource>();
         pointer = GameObject.FindGameObjectWithTag("CrackedPointer");
     }
 
@@ -22,6 +24,7 @@ public class PeelScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        peelAttemptSound.Play();
         animator.SetBool("PeelButtonDown", true);
         if (peelType == 1)
         {
@@ -35,6 +38,7 @@ public class PeelScript : MonoBehaviour
 
     private void OnMouseUp()
     {
+
         animator.SetBool("PeelButtonDown", false);
         if (peelType == 1)
         {

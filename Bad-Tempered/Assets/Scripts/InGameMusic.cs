@@ -9,7 +9,11 @@ public class InGameMusic : MonoBehaviour
     void Awake()
     {
         ingamemusic = GetComponent<AudioSource>();
-        ingamemusic.Play();
+        if (!ingamemusic.isPlaying)
+        {
+            ingamemusic.Play();
+        }
+
         GameObject[] objs = GameObject.FindGameObjectsWithTag("InGameMusic");
         if (objs.Length > 1)
         {

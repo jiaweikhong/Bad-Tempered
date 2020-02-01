@@ -7,10 +7,11 @@ public class CrackedScreenAnimate : MonoBehaviour
 {
     public int anim;
     public Animator animator;
+    public AudioSource peelSound;
     // Start is called before the first frame update
     void Start()
     {
-        
+        peelSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,6 +20,10 @@ public class CrackedScreenAnimate : MonoBehaviour
         switch (anim)
         {
             case 1:
+                if (!peelSound.isPlaying)
+                {
+                    peelSound.Play();
+                } 
                 Debug.Log("success!");
                 animator.SetTrigger("successPeel");
                 break;
