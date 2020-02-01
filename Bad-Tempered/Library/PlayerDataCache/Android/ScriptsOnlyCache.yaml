@@ -25,7 +25,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/pasteStage.unity:
+    Assets/Scenes/PasteStage.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -51,29 +51,29 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9670}
+      Script: {instanceID: 9840}
     - Class: 114
-      Script: {instanceID: 9834}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 9874}
+      Script: {instanceID: 10042}
     - Class: 114
-      Script: {instanceID: 10272}
+      Script: {instanceID: 10440}
     - Class: 114
-      Script: {instanceID: 10292}
+      Script: {instanceID: 10460}
     - Class: 114
-      Script: {instanceID: 10860}
+      Script: {instanceID: 10708}
     - Class: 114
-      Script: {instanceID: 10874}
+      Script: {instanceID: 11032}
     - Class: 114
-      Script: {instanceID: 11110}
+      Script: {instanceID: 11046}
     - Class: 114
-      Script: {instanceID: 11276}
+      Script: {instanceID: 11188}
     - Class: 114
-      Script: {instanceID: 11480}
+      Script: {instanceID: 11284}
     - Class: 114
-      Script: {instanceID: 23242}
+      Script: {instanceID: 11450}
     - Class: 114
-      Script: {instanceID: 23246}
+      Script: {instanceID: 11654}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -303,6 +303,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: e3e4c5ce13fc35ecc87fa6afc67cc854
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScreenProtector
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -331,6 +337,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: script
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -379,6 +391,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: a272ecc3d7fc0231d7cef5db4211e786
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PasteButton
   - hash:
       serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
@@ -495,6 +513,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Score
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -507,29 +531,47 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: e3e4c5ce13fc35ecc87fa6afc67cc854
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ScreenProtector
+    className: GameMaster
+  - hash:
+      serializedVersion: 2
+      Hash: ffc182c888c85cabd388b30dfaaaa8e0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CheckStagePointer
+  - hash:
+      serializedVersion: 2
+      Hash: ffc182c888c85cabd388b30dfaaaa8e0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CrackedScreenPointer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: script
+    className: DustballScript
   - hash:
       serializedVersion: 2
-      Hash: a272ecc3d7fc0231d7cef5db4211e786
+      Hash: fe8097537c1ad2f8754aa8310b6a2076
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PasteButton
+    className: CountdownTimer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 38007def21dcac876d9fe75af0ffee4b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Score
+    className: CleanStageMaster
+  - hash:
+      serializedVersion: 2
+      Hash: 262c207fba9a26918151a669c4c44b8a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CrackedScreenAnimate
   platform: 13
   scenePathNames:
-  - Assets/Scenes/pasteStage.unity
+  - Assets/Scenes/PasteStage.unity
   playerPath: C:/Users/user/Documents/GameJam/Bad-Tempered/Bad-Tempered/test.apk
