@@ -16,7 +16,7 @@ public class CrackedScreenPointer : MonoBehaviour
     private Vector2 startPosition;
     private Vector2 endPosition;
 
-    public GameObject topRef;
+    //public GameObject topRef;
     GameObject crackedScreen;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class CrackedScreenPointer : MonoBehaviour
     //    GlobalCountDown.StartCountDown(TimeSpan.FromMinutes(5));
         lerpUp = true;
         startPosition = this.transform.position;
-        endPosition = topRef.transform.position;
+        endPosition = new Vector2(-2.3f, 4.77f);
         crackedScreen = GameObject.FindGameObjectWithTag("CrackedScreen");
     }
 
@@ -82,22 +82,8 @@ public class CrackedScreenPointer : MonoBehaviour
             // success animation
             crackedScreen.GetComponent<CrackedScreenAnimate>().anim = 1;
         }
-        //else if (lerpTime >= upperBound || lerpTime <= lowerBound)
-        //{
-            // failure animation
-        //    crackedScreen.GetComponent<CrackedScreenAnimate>().anim = 2;
-        //}
-        /*  else
-          {
-              upperBound *= 0.75f;
-              lowerBound *= 0.75f;
-          }*/
         lerpTime = 0f;
         lerpUp = true;
         lerpDown = false;
-    }
-    public void GoToCleanStage()
-    {
-        SceneManager.LoadScene("CleanStage");
     }
 }
