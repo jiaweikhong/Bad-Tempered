@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayAgainButton : MonoBehaviour
 {
-    public Animator animator;
     public AudioSource buttonPress;
-
+    public Sprite releasedButtonImg;
+    public Sprite pressedButtonImg;
+    SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        buttonPress = GetComponent<AudioSource>();   
+        buttonPress = GetComponent<AudioSource>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = releasedButtonImg;
     }
 
     // Update is called once per frame
@@ -21,6 +24,7 @@ public class PlayAgainButton : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        spriteRenderer.sprite = pressedButtonImg;
         buttonPress.Play();
         //animator.SetBool("ButtonPress", true);
     }
@@ -28,12 +32,14 @@ public class PlayAgainButton : MonoBehaviour
     private void OnMouseUp()
     {
         //animator.SetBool("ButtonPress", false);
+        spriteRenderer.sprite = releasedButtonImg;
         GameObject.FindGameObjectWithTag("InGameMusic").GetComponent<AudioSource>().Play();
         GoToPrepareGame();
     }
 
     public void GoToPrepareGame()
     {
+        
         SceneManager.LoadScene("PrepareGame");
     }
 }

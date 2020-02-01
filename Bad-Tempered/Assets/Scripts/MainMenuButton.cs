@@ -5,38 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButton : MonoBehaviour
 {
-    public Animator animator;
-    public AudioSource buttonPressSound;
-    public AudioClip buttonPressSoundClip;
-
     // Start is called before the first frame update
+    public Sprite releasedButtonImg;
+    public Sprite pressedButtonImg;
+    public AudioSource buttonPressSound;
+    public AudioClip buttonPressClip;
+    SpriteRenderer spriteRenderer;
+
+
     void Start()
     {
-        buttonPressSound = GetComponent<AudioSource>();
-
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = releasedButtonImg;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnMouseDown()
     {
-        animator.SetBool("ButtonPress", true);
-        buttonPressSound.PlayOneShot(buttonPressSoundClip, 1.0f);
+        spriteRenderer.sprite = pressedButtonImg;
+        buttonPressSound.Play();
+ 
     }
 
     private void OnMouseUp()
     {
-        animator.SetBool("ButtonPress", false);
-        buttonPressSound.PlayOneShot(buttonPressSoundClip, 1.0f);
-        GoToPrepareGame();
-    }
-
-    public void GoToPrepareGame()
-    {
-        SceneManager.LoadScene("PrepareGame");
+        spriteRenderer.sprite = releasedButtonImg;
+        buttonPressSound.Play();
+        SceneManager.LoadScene("MainMenu");
     }
 }
