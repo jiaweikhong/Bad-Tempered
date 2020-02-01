@@ -35,7 +35,7 @@ public class InstrButtonScript : MonoBehaviour
         buttonPressSound.PlayOneShot(buttonPressSoundClip, 1.0f);
         instructions.SetActive(true);
         startButton.SetActive(false);
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
         //GoToInstrPage();
     }
 

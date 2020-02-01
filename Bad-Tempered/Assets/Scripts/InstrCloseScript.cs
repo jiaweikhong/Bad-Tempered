@@ -22,6 +22,7 @@ public class InstrCloseScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        closeInstrSource.PlayOneShot(closeInstrClip,1.0f);
         this.gameObject.SetActive(false);
         startButton.SetActive(true);
         instructionsButton.SetActive(true);

@@ -19,7 +19,11 @@ public class ScreenProtector : MonoBehaviour
     float greenRange = 0.1f;
     float deductScoreMultiplier = 3.0f;
     public SpriteRenderer backing;
-
+    public AudioClip greenAlert;
+    public AudioClip yellowAlert;
+    public AudioClip redAlert;
+    public AudioSource alertSignal;
+    float penalty = 0.0f;
     //If stage completed within 3 secs, no airbubbles
     //Else for every sec elapsed after 3 secs,+1 airbubble for next stage.
 
@@ -32,7 +36,7 @@ public class ScreenProtector : MonoBehaviour
         transform.position = new Vector3(1.0f, 1.0f, 0);
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_SpriteRenderer.color = Color.magenta;
-        
+        alertSignal = GetComponent<AudioSource>();
 
     }
 
@@ -40,10 +44,7 @@ public class ScreenProtector : MonoBehaviour
     void Update()
     {
         //Vector3 newPos = Vector3.zero;
-        //Use coroutines to segment parts of the game
-        //1st coroutine is the alignment of the screen protector. If position hit, go to next coroutine
-        //2nd coroutine ensures alignment of screenprotector is at (0,0) for 1 sec. If completed, prompt to go next stage appears?(tap enabled) Else,go back to 1st coroutine
-        //Calculate and bring over the number of air bubbles to be generated in the next stage.
+        
         float inputX = Input.acceleration.x * speed;
         float inputY = Input.acceleration.y * speed;
         Vector3 tempPos = new Vector3(transform.position.x + inputX, transform.position.y + inputY);
@@ -63,14 +64,38 @@ public class ScreenProtector : MonoBehaviour
         if (transform.position.x < greenRange && transform.position.x > -greenRange && transform.position.y < greenRange && transform.position.y > -greenRange)
         {
             m_SpriteRenderer.color = Color.green;
+            penalty = 0;
+            
+
         } else if (transform.position.x < yellowRange && transform.position.x > -yellowRange && transform.position.y < yellowRange && transform.position.y > -yellowRange)
         {
             m_SpriteRenderer.color = Color.yellow;
+            penalty = 20;
         } else
         {
             m_SpriteRenderer.color = Color.magenta;
+            penalty = 40;
         }
-        score = maxScore - (Mathf.Abs(transform.position.x) * deductScoreMultiplier) - Mathf.Abs(transform.position.y);
+        if (!alertSignal.isPlaying)
+        {
+            if (m_SpriteRenderer.color == Color.green)
+            {
+                alertSignal.PlayOneShot(greenAlert, 0.5f);
+            }
+            else if (m_SpriteRenderer.color == Color.yellow)
+            {
+                alertSignal.PlayOneShot(yellowAlert, 0.5f);
+            }
+            else if (m_SpriteRenderer.color == Color.magenta)
+            {
+                alertSignal.PlayOneShot(redAlert, 0.5f);
+            }
+        }
+        score = maxScore - (Mathf.Abs(transform.position.x) * deductScoreMultiplier) - Mathf.Abs(transform.position.y) - penalty;
+        if (score < 0)
+        {
+            score = 0;
+        }
     }
 
 }

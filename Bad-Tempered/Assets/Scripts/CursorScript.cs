@@ -28,7 +28,7 @@ public class CursorScript : MonoBehaviour
         {
             if (!wipeSound.isPlaying)
             {
-                float randVol = Random.Range(0.5f, 2.0f);
+                float randVol = Random.Range(0.5f, 1.0f);
                 wipeSound.PlayOneShot(wipeSoundClip, randVol);
             }
         }

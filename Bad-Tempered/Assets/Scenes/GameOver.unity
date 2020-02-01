@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameoverMusic: {fileID: 705685043}
+  ingameMusic: {fileID: 0}
 --- !u!82 &705685043
 AudioSource:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da67cbf5ad8e9884da9e69429c096218, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.17
   m_Pitch: 1
   Loop: 0
   Mute: 0
