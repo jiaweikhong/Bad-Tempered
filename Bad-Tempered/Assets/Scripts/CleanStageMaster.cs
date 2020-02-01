@@ -32,6 +32,7 @@ public class CleanStageMaster : MonoBehaviour
 
     public void GoToPasteStage()
     {
+        PointsScript.points += 20;
         SceneManager.LoadScene("PasteStage");
     }
 }
