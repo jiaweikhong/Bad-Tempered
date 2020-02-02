@@ -9,7 +9,8 @@ public class GameOverMusic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindGameObjectWithTag("InGameMusic").GetComponent<AudioSource>().Stop();
+        //GameObject.FindGameObjectWithTag("InGameMusic").GetComponent<AudioSource>().Stop();
+        Destroy(GameObject.FindGameObjectWithTag("InGameMusic"));
         gameoverMusic = GetComponent<AudioSource>();
         gameoverMusic.Play();
     }
